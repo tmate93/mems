@@ -13,10 +13,10 @@ l = (127,51,0)      #life
 b = (0,100,0)       #border
 
 x = 1               #strarting coordinates for the marble
-y = 7               #vertical
+y = 1               #vertical
 life = 7
 
-maze_test = [[w,w,w,w,w,w,w,w,w,w],              #smaller test maze for testing
+maze      = [[w,w,w,w,w,w,w,w,w,w],              #smaller maze
              [w,f,f,f,f,f,f,f,f,w],
              [w,w,w,f,w,t,f,w,f,w],
              [w,t,w,f,w,w,w,w,f,w],
@@ -28,23 +28,23 @@ maze_test = [[w,w,w,w,w,w,w,w,w,w],              #smaller test maze for testing
              [w,t,f,f,f,f,f,f,f,w],
              [w,w,w,w,w,w,w,w,w,w]]
              
-maze = [[w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w],    #the final version of the maze
-        [w,t,f,f,f,f,w,t,f,f,f,f,f,f,f,f,w],
-        [w,f,f,f,f,f,f,f,f,f,w,t,f,f,f,f,w],
-        [w,f,w,w,w,w,w,w,w,w,w,w,w,w,f,f,w],
-        [w,f,f,f,t,w,f,f,f,f,f,f,t,w,w,f,w],
-        [w,f,f,f,f,w,f,w,w,w,w,f,f,w,t,f,w],
-        [w,w,w,w,f,w,f,w,g,f,w,f,f,w,f,f,w],
-        [w,f,f,w,f,w,f,w,f,f,w,f,f,w,f,f,w],
-        [w,f,f,w,f,w,f,f,f,f,w,w,f,w,f,w,w],
-        [w,f,f,w,f,w,f,f,f,t,w,f,f,w,f,t,w],
-        [w,f,f,w,f,w,w,w,w,w,w,f,f,w,f,f,w],
-        [w,f,f,w,f,f,t,w,f,f,f,f,f,w,f,f,w],
-        [w,f,f,w,f,f,f,f,f,f,f,f,t,w,w,f,w],
-        [w,f,f,w,w,w,w,w,w,w,w,w,w,w,t,f,w],
-        [w,f,f,f,w,f,f,f,f,f,f,t,w,t,f,f,w],
-        [w,t,f,f,f,f,f,t,w,f,f,f,f,f,f,f,w],
-        [w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w]]
+maze_test = [[w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w],    #bigger version of the maze
+            [w,t,f,f,f,f,w,t,f,f,f,f,f,f,f,f,w],
+            [w,f,f,f,f,f,f,f,f,f,w,t,f,f,f,f,w],
+            [w,f,w,w,w,w,w,w,w,w,w,w,w,w,f,f,w],
+            [w,f,f,f,t,w,f,f,f,f,f,f,t,w,w,f,w],
+            [w,f,f,f,f,w,f,w,w,w,w,f,f,w,t,f,w],
+            [w,w,w,w,f,w,f,w,g,f,w,f,f,w,f,f,w],
+            [w,f,f,w,f,w,f,w,f,f,w,f,f,w,f,f,w],
+            [w,f,f,w,f,w,f,f,f,f,w,w,f,w,f,w,w],
+            [w,f,f,w,f,w,f,f,f,t,w,f,f,w,f,t,w],
+            [w,f,f,w,f,w,w,w,w,w,w,f,f,w,f,f,w],
+            [w,f,f,w,f,f,t,w,f,f,f,f,f,w,f,f,w],
+            [w,f,f,w,f,f,f,f,f,f,f,f,t,w,w,f,w],
+            [w,f,f,w,w,w,w,w,w,w,w,w,w,w,t,f,w],
+            [w,f,f,f,w,f,f,f,f,f,f,t,w,t,f,f,w],
+            [w,t,f,f,f,f,f,t,w,f,f,f,f,f,f,f,w],
+            [w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w]]
 
 rows = len(maze)                            #getting the dimensions of the maze matrix for dynamic maze size handling
 cols = len(maze[0])
@@ -105,10 +105,10 @@ while not game_over:                        #main program
     sense.show_message("WIN!")
     game_over = True
   if maze[y][x] == t:                       #checking if the marble collided with a trap
-    if life > 0:
+    if life > 1:
       life -= 1
       x = 1
-      y = 7
+      y = 1
       sense.show_message("LIFE LOST!")      #if there are still lives left remove one and display message
       sense.clear()
     else:
