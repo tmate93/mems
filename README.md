@@ -5,7 +5,7 @@ Ez a pythonban íródott program az elterjedt játék újragondolása, átemelé
 # Működése:
 
 A program a Sense Hat inerciális mérőegységének (IMU) segítségével, a készülék tengelyek mentén való elmozdálásának mérésével mozgatja a "golyót" az előre megadott labirintusban
-. a golyó koordinátáinak és a mért elmozdulásának felhasználásával teszteli, hogy az szabadon mozoghat-e az adott irányba, vagy falnak, csapdának esetleg a célnak ütközne-e, és ezen események alapján dönti el a mozgatás eredményét (sorrendben): <br> 
+. a golyó koordinátáinak és a készülék mért elmozdulásának felhasználásával teszteli, hogy a játékos szabadon mozoghat-e az adott irányba, vagy falnak, csapdának esetleg a célnak ütközne-e, és ezen események alapján dönti el a mozgatás eredményét (sorrendben): <br> 
 - letiltja a golyó mozgását,<br>
 - levon életet amennyiben még van, és visszaállítja a kezdőállapotba a játékost, ha elfogyott az összes élet jelzi a játék végét és kilép a programból,<br>
 - illetve írja ki a győzelmet jelző szöveget és lép ki a programból.<br>
